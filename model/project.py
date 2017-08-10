@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import batch
-import mrm
+import ionchrom
 import rt
 import processing
 
@@ -13,14 +13,16 @@ class project():
         self.name=name
         self.basePath=basePath
         self.batchList=list()
-        self.mrmList=list()
+        self.ionchromList=list()
         self.iniRtList=list()
         self.iniProcList=list()
 
     def newBatch(self,batchID,batchName="",dataPath=""):
         self.batchList.append(batch.batch(batchID,batchName,dataPath))
-    def newMRM(self,mrmID,Q1=0.0,Q3=0.0,name="",mrmtype="analyte",istd=None):
-        self.mrmList.append(mrm.mrm(mrmID,Q1,Q3,name,mrmtype,istd))
+    def newIonchrom(self,ioncrhomID,mz1=0.0,mz2=0.0,ionchromtype="MRM",analname="",analtype="analyte",istd=None):
+        self.ionchromList.append(
+                ionchrom.ionchrom(ioncrhomID,mz1,mz2,ionchromtype,analname,analtype,istd,self.iniProcList)
+            )
     def newIniRt(self,rtID,mrmID,rtFrom=0.0,rtTo=0.0):
         self.iniRtList.append(rt.rt(rtID,mrm,self,rtFrom,rtTo))
     def newIniProc(self,procID,rt,procType,params):

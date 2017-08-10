@@ -23,7 +23,5 @@ class sample():
 
     def readRawdata(self):
         #read the data into the rawdataList
-
-
-
-
+        for oneIonChrom in self.batch.project.ionchromList:
+            rawXYdata=oneIonChrom.extractRawData(mzML)

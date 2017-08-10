@@ -17,8 +17,8 @@ class batch():
         self.rtList=deepcopy(projIniRtList)
         self.sampleList=list()
 
-    def newRT(self,rtID,mrm,rtFrom=0.0,rtTo=0.0):
-        self.rtList.append(rt(rtID,mrm,self,rtFrom,rtTo))
+    def newRT(self,rtID,ionchrom,rtFrom=0.0,rtTo=0.0):
+        self.rtList.append(rt(rtID,ionchrom,self,rtFrom,rtTo))
     def newSample(self,samID, samplName="",samplID="",sampleType="unknown"):
         self.sampleList.append(sample(samID,self,samplName,samplID,sampleType))
 
