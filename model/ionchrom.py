@@ -35,7 +35,7 @@ class ionchrom():
             Q1=self.mz1
             Q3=self.mz2
             #do something
-        elif self.ionchromtype=="ExtIon"
+        elif self.ionchromtype=="ExtIon":
             mzFrom=self.mz1
             mzTo=self.mz2
             #do something

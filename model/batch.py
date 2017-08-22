@@ -26,6 +26,7 @@ class batch():
         #glob mzML from dataPath
         #either read the mzML files and add samples and rawdata directly
         #or add samples and give them their datafile path
+        print "todo"
 
 
 
