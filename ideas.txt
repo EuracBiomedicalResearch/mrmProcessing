@@ -1,4 +1,0 @@
-evaluate if it makes sense to inherit from list for most or all of the data structures.
-Would require a lot of dict to list ids
-Use named tuples for the list elements
-Also investigate how python does models as in MVC or database abstraction models
