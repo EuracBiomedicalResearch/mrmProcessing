@@ -3,7 +3,7 @@
 
 import unittest
 
-import model.project as project
+import mrmProcessing.model.project as project
 
 
 class testProject(unittest.TestCase):
