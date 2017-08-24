@@ -9,8 +9,8 @@ class rt():
         self.myid=myid
         self.rtFrom=rtFrom
         self.rtTo=rtTo
-        self.ionchrom=weakref.ref(ionchrom)
-        self.batch=weakref.ref(batch)
+        self.ionchrom=weakref.proxy(ionchrom)
+        self.batch=weakref.proxy(batch)
 
 
 

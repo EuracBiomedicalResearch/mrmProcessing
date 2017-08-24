@@ -14,7 +14,7 @@ class ionchrom():
         self.mz2=mz2
         self.ionchromtype=ionchromtype
         self.analtype=analtype
-        self.isionchrom=weakref.ref(isionchrom)
+        self.isionchrom=weakref.proxy(isionchrom)
         self.iniprocList=deepcopy(iniprocList)
 
     def asignISTD(self,isionchrom):

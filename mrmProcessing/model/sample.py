@@ -8,7 +8,7 @@ class sample():
 
     def __init__(self,myid,batch,samplName="",samplID="",sampleType="unknown",dataFile=""):
         self.myid=myid
-        self.batch=weakref.ref(batch)
+        self.batch=weakref.proxy(batch)
         self.name=samplName
         self.samplID=samplID
         self.sampleType=sampleType

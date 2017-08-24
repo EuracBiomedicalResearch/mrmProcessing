@@ -18,7 +18,7 @@ class project():
         self.iniProcList=list()
 
     def newBatch(self,batchID,batchName="",dataPath=""):
-        self.batchList.append(batch.batch(batchID,batchName,dataPath))
+        self.batchList.append(batch.batch(batchID,self,batchName,dataPath))
     def newIonchrom(self,ioncrhomID,mz1=0.0,mz2=0.0,ionchromtype="MRM",analname="",analtype="analyte",istd=None):
         self.ionchromList.append(
                 ionchrom.ionchrom(ioncrhomID,mz1,mz2,ionchromtype,analname,analtype,istd,self.iniProcList)

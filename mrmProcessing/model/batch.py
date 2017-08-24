@@ -11,7 +11,7 @@ class batch():
 
     def __init__(self,myid,project,name="",dataPath="",projIniRtList=list()):
         self.myid=myid
-        self.project=weakref.ref(project)
+        self.project=weakref.proxy(project)
         self.name=name
         self.dataPath=dataPath
         self.rtList=deepcopy(projIniRtList)
