@@ -17,14 +17,13 @@ class project():
         self.iniRtList=list()
         self.iniProcList=list()
 
-    def newBatch(self,batchID,batchName="",dataPath=""):
-        self.batchList.append(batch.batch(batchID,batchName,dataPath))
-    def newIonchrom(self,ioncrhomID,mz1=0.0,mz2=0.0,ionchromtype="MRM",analname="",analtype="analyte",istd=None):
-        self.ionchromList.append(
-                ionchrom.ionchrom(ioncrhomID,mz1,mz2,ionchromtype,analname,analtype,istd,self.iniProcList)
-            )
-    def newIniRt(self,rtID,mrmID,rtFrom=0.0,rtTo=0.0):
-        self.iniRtList.append(rt.rt(rtID,mrm,self,rtFrom,rtTo))
+    def newBatch(self,batchID,batchName="",dataPath="",iniRtList=list()):
+        self.batchList.append(batch.batch(batchID,self,batchName,dataPath,initRtList))
+    def newIonchrom(self,ioncID,mz1=0.0,mz2=0.0,ioncType="MRM",analname="",
+                analtype="analyte",isionchrom=None,iniprocList=list()):
+        self.ionchromList.append(ionchrom.ionchrom(ioncID,mz1,mz2,ioncType,analname,analtype,isionchrom,iniprocList))
+    def newIniRt(self,rtID,ionchrom,rtFrom=0.0,rtTo=0.0):
+        self.iniRtList.append(rt.rt(rtID,ionchrom,None,rtFrom,rtTo))
     def newIniProc(self,procID,rt,procType,params):
         self.iniProcList.append(processing.processing(procID,rt,self,procType,params))
     def readIniRt(self):

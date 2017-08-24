@@ -9,8 +9,8 @@ class processing():
         self.myid=myid
         self.procType=procType
         self.params=params
-        self.rt=weakref.ref(rt)
-        self.rawdata=weakref.ref(rawdata)
+        self.rt=weakref.proxy(rt)
+        self.rawdata=weakref.proxy(rawdata)
 
 
 

@@ -5,13 +5,13 @@ import weakref
 
 class result():
 
-    def __init__(self,myid,rt,rawdata,resultType,resultVal,flags=""):
+    def __init__(self,myid,resultType,resultVal,flags=""):
         self.myid=myid
         self.resultType=resultType
         self.resultVal=resultVal
         self.flags=flags
-        self.rt=weakref.ref(rt)
-        self.rawdata=weakref.ref(rawdata)
+        self.rt=weakref.proxy(rt)
+        self.rawdata=weakref.proxy(rawdata)
 
 
 

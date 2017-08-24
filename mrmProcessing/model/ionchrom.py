@@ -14,12 +14,15 @@ class ionchrom():
         self.mz2=mz2
         self.ionchromtype=ionchromtype
         self.analtype=analtype
-        self.isionchrom=weakref.ref(isionchrom)
+        if isionchrom!=None:
+            self.isionchrom=weakref.proxy(isionchrom)
+        else:
+            self.isionchrom=None
         self.iniprocList=deepcopy(iniprocList)
 
     def asignISTD(self,isionchrom):
         self.isionchrom=weakref.ref(isionchrom)
-    def asignAnaltype(self,analtype):
+    def asignAnalyteType(self,analtype):
         if analtype in ("analyte","is"):
             self.analtype=analtype
             return True
