@@ -6,13 +6,11 @@ from dataHolders import xyDataHolder
 
 class rawdata():
 
-    def __init__(self,myid, mrm,sample,anxyDataHolder=xyDataHolder(""),procList=list()):
+    def __init__(self,myid,ionchrom,sample,anxyDataHolder=xyDataHolder("")):
         self.myid=myid
-        self.chromData=anxyDataHolder
-        self.mrm=weakref.proxy(mrm)
+        self.rawData=anxyDataHolder
+        self.ionchrom=weakref.proxy(ionchrom)
         self.sample=weakref.proxy(sample)
-        self.procList=procList
-        self.resultList=list()
 
 
 
