@@ -13,7 +13,7 @@ class sample():
         self.samplID=samplID
         self.sampleType=sampleType
         self.dataFile=dataFile #should be a path to an mzML data file
-        self.rawdataList=self.readRawdata()
+        self.rawdataList=list()
 
     def assignSampleType(self,sampleType):
         if sampleType in ("unknown","calibrant","spiked QC","unspiked QC","blank","double blank"):
@@ -21,10 +21,13 @@ class sample():
             return True
         return False
 
+    def newRawdata(self,myid,ionchrom,sample,anxyDataHolder=xyDataHolder("")):
+        #note: somehow we need to be able to connect rawdata, rt and mz1/mz2 and processing parameters for the sample
+        #note: ionchrom here should from batch.rtList as it already connects rt and mz1/mz2 and the processing parameters
+        #it should also be easy to link those other parameters
+        self.rawdataList.append(myid,ionchrom,anxyDataHolder)
     def readRawdata(self):
         #read the data into the rawdataList
-        readList=list()
         print "todo"
         #for oneIonChrom in self.batch.project.ionchromList:
         #    rawXYdata=oneIonChrom.extractRawData(mzML)
-        return readList

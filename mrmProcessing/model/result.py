@@ -5,7 +5,7 @@ import weakref
 
 class result():
 
-    def __init__(self,myid,rt,rawdata,resultType,resultVal,flags=""):
+    def __init__(self,myid,resultType,resultVal,flags=""):
         self.myid=myid
         self.resultType=resultType
         self.resultVal=resultVal
