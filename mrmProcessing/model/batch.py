@@ -23,15 +23,21 @@ class batch():
 
     def newRT(self,rtID,ionchrom,rtFrom=0.0,rtTo=0.0):
         self.rtList.append(rt(rtID,ionchrom,self,rtFrom,rtTo))
-    def newSample(self,samID, samplName="",samplID="",sampleType="unknown"):
-        self.sampleList.append(sample(samID,self,samplName,samplID,sampleType))
+    def newSample(self,samID, dataFile, samplName,samplID="",sampleType="unknown"):
+        self.sampleList.append(sample(samID,self,dataFile,samplName,samplID,sampleType))
     def newRawdata(self,myid,ionchrom,sample,anxyDataHolder=xyDataHolder("")):
         #note: ionchrom here comes from iniRtList as it already connects rt and mz1/mz2 and the processing parameters
         self.rawdataList.append(myid,ionchrom,sample,anxyDataHolder)
     def readDataPath(self):
-        #glob mzML from dataPath
+        #
         #either read the mzML files and add samples and rawdata directly
         #or add samples and give them their datafile path
+        #
+        #read the injection list for the sample info and add them from there (more complete)
+        #or
+        #glob mzML from dataPath, create samples based on filename
+        #parse the filenames into samples
+        #
         print "todo"
 
 

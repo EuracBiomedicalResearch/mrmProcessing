@@ -6,7 +6,7 @@ import rawdata
 
 class sample():
 
-    def __init__(self,myid,batch,samplName="",samplID="",sampleType="unknown",dataFile=""):
+    def __init__(self,myid,batch,dataFile,samplName,samplID="",sampleType="unknown"):
         self.myid=myid
         self.batch=weakref.proxy(batch)
         self.name=samplName
@@ -23,5 +23,8 @@ class sample():
 
     def readRawdata(self):
         #read the data into the rawdataList
-        for oneIonChrom in self.batch.project.ionchromList:
-            rawXYdata=oneIonChrom.extractRawData(mzML)
+        readList=list()
+        print "todo"
+        #for oneIonChrom in self.batch.project.ionchromList:
+        #    rawXYdata=oneIonChrom.extractRawData(mzML)
+        return readList
